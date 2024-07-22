@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Total Balance'],
+          ['January',     24000],
+          ['February',      35000],
+          ['March',  48000],
+          ['April', 32000],
+          ['May',    27000]
+        //   ['June',    79000]
+        //   ['July',    80000]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load("current", {packages:["corechart"]});
+       google.charts.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['Tasks', 'Rupees Spend'],
+           ['Food',     11],
+           ['Education',      2],
+           ['Entertainment',  1],
+           ['Social Life', 1],
+           ['Travel',    7]
+         ]);
+ 
+         var options = {
+           title: 'Monthly Expenses',
+           pieHole: 0.4,
+         };
+ 
+         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+         chart.draw(data, options);
+       }
+     </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul >
+                <h1 class="title"><i class="fa-solid fa-indian-rupee-sign"></i> Finance</h1>
+                <hr>
+                <li><i class="fa-solid fa-house"></i><a href="http://127.0.0.1:5500/mainpage.html"> Home</a></li>
+                <li><i class="fa-solid fa-wallet"></i><a href="http://127.0.0.1:5500/wallets.html"> Wallet</a></li>
+                <li><i class="fa-solid fa-money-bill-transfer"></i><a href="http://127.0.0.1:5500/transaction.html">Transactions</a></li>
+                <li><i class="fa-solid fa-chart-simple"></i> <a href="http://127.0.0.1:5500/analytics.html">Analytics</a></li>
+                <li><i class="fa-solid fa-gear"></i> <a href="#">Settings</a></li>
+                <li><i class="fa-solid fa-calendar-alt"></i> <a href="#">Calendar</a></li>
+                <li><i class="fa-solid fa-bell"></i><a href="#"> Notifications</a></li>
+            </ul>
+            <div>
+                <a href="http://127.0.0.1:5500/index1.html" class="button">Logout</a>
+            </div>
+        </nav>
+        <main class="content">
+    
+            <header>
+                <header class="header1">
+                    <div>
+                        <h1><b >Welcome, Username</b></h1>
+                    </div>
+                </header>
+                <header class="header2">
+                    <div>
+                        <img src="https://cdn-ancco.nitrocdn.com/eoOqKFoEHjNDUhqcDBmZUwwbGWzBkhSc/assets/images/optimized/rev-3b0b8ad/www.visioninfosoft.com/wp-content/uploads/2016/02/Profile-300x300.jpg" alt="Profile Image" class="profile-img">
+                    </div>
+                </header>
+            </header>
+
+            <section class="balance">
+                <h2>Your Balance</h2>
+                <div class="balance-amount">Rs.5,45,144</div>
+                <div class="balance-change">+20.8%</div>
+            </section>
+            <br>
+            <div class="charts">
+                <div class="chart-container">
+                    <h3>Total Balance</h3>
+                    <div id="piechart_3d" style="width: 450px; height: 500px;"></div>
+                </div>
+                <div class="chart-container">
+                    <h3>Total Cash In and Cash Out</h3>
+ 
+                    <div id="donutchart" style="width: 450px; height: 500px;"></div>
+                </div>
+            </div>
+            </section> 
+            <br>
+            <hr>
+            <br>
+            <section class="goals">
+                <h3>Financial Goals</h3>
+                <div class="goal">
+                    <span class="goal-name">Vacation Savings</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                        <span class="progress-percentage">70%</span>
+                    </div>
+                    <div class="goal-target">Target: Rs.100000</div>
+                </div>
+                <div class="goal">
+                    <span class="goal-name">Emergency Funds</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                        <span class="progress-percentage">50%</span>
+                    </div>
+                    <div class="goal-target">Target: Rs.500000</div>
+                </div>
+                <div class="goal">
+                    <span class="goal-name">Higher Studies</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                        <span class="progress-percentage">75%</span>
+                    </div>
+                    <div class="goal-target">Target: Rs.500000</div>
+                </div>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <section class="notes-section">
+                <h3>Add Notes</h3>
+                <div class="note-container">
+                    <textarea class="note-input" placeholder="Write your notes here..."></textarea>
+                    <button class="note-button">Add Note</button>
+                </div>
+                <div class="notes-list"></div>
+            </section>
+        </main>
+        <!-- <aside class="sidebar-right">
+            <section class="card-info">
+                <h3>My Cards</h3>
+                <div class="card">
+                    <h4 class="cred">CREDIT CARD</h4>
+                    <p class="card-holder"><b>NERD HERD</b></p>
+                    <p class="card-number"><b>1406 3214 3215 3216</b></p>
+                </div>
+            </section>
+            <section class="budgets">
+                <hr><h3>My Budgets</h3>
+                <div class="budget-item">Subscriptions: Rs.250 left</div>
+                <div class="budget-item">Food and Drinks: Rs.1000 left</div>
+                <div class="budget-item">Groceries: Rs.2500 left</div>
+                <div class="budget-item">Savings: Rs.1200 left</div>
+            </section>
+            <section class="tips">
+                <hr><h3>Financial Tips</h3>
+                <p>1. Track your spending to identify patterns.</p>
+                <p>2. Set clear financial goals.</p>
+                <p>3. Review and adjust your budget regularly.</p>
+            </section>
+        </aside> -->
+        <div class="container">
+            <div class="content">
+                <!-- Main content here -->
+            </div>
+            <!-- <aside class="sidebar-right">
+                <section class="card-info">
+                    <h3>My Cards</h3>
+                    <div class="card">
+                        <h4 class="cred">CREDIT CARD</h4>
+                        <p class="card-holder"><b>NERD HERD</b></p>
+                        <p class="card-number"><b>1406 3214 3215 3216</b></p>
+                    </div>
+                </section>
+                <section class="budgets">
+                    <hr>
+                    <h3>My Budgets</h3>
+                    <div class="budget-item">Subscriptions: Rs.250 left</div>
+                    <div class="budget-item">Food and Drinks: Rs.1000 left</div>
+                    <div class="budget-item">Groceries: Rs.2500 left</div>
+                    <div class="budget-item">Savings: Rs.1200 left</div>
+                </section>
+                <hr>
+                <section class="tips">
+                    <h3>Financial Tips</h3>
+                    <p>1. Track your spending to identify patterns.</p>
+                    <p>2. Set clear financial goals.</p>
+                    <p>3. Review and adjust your budget regularly.</p>
+                </section>
+            </aside> -->
+            <aside class="sidebar-right">
+                <section class="card-info">
+                    <h3>My Cards</h3>
+                    <div class="card">
+                        <h4 class="cred">CREDIT CARD</h4>
+                        <p class="card-holder"><b>NERD HERD</b></p>
+                        <p class="card-number"><b>1406 3214 3215 3216</b></p>
+                    </div>
+                </section>
+                <section class="budgets">
+                    <hr><h3>My Budgets</h3>
+                    <div class="budget-item">Subscriptions: Rs.2500 left</div>
+                    <div class="budget-item">Food and Drinks: Rs.10000 left</div>
+                    <div class="budget-item">Groceries: Rs.2500 left</div>
+                    <div class="budget-item">Savings: Rs.12000 left</div>
+                </section>
+                <section class="tips">
+                    <hr><h3>Financial Tips</h3>
+                    <p>1. Track your spending to identify patterns.</p>
+                    <p>2. Set clear financial goals.</p>
+                    <p>3. Review and adjust your budget regularly.</p>
+                </section>
+            </aside>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="gpt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Total Balance'],
+                ['January', 78000],
+                ['February', 97000],
+                ['March', 86000],
+                ['April', 112000],
+                ['May', 87000]
+            ]);
+
+            var options = {
+                title: 'Total Balance Over Time',
+                is3D: true,
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities',
+                pieHole: 0.4,
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <h1 class="title"><i class="fa-solid fa-indian-rupee-sign"></i> Finance</h1>
+                <hr>
+                <li class="fade-in-left"><i class="fa-solid fa-house"></i> Home</li>
+                <li class="fade-in-left"><i class="fa-solid fa-wallet"></i> Wallet</li>
+                <li class="fade-in-left"><i class="fa-solid fa-money-bill-transfer"></i> Transactions</li>
+                <li class="fade-in-left"><i class="fa-solid fa-chart-simple"></i> Analytics</li>
+                <li class="fade-in-left"><i class="fa-solid fa-gear"></i> Settings</li>
+                <li class="fade-in-left"><i class="fa-solid fa-calendar-alt"></i> Calendar</li>
+                <li class="fade-in-left"><i class="fa-solid fa-bell"></i> Notifications</li>
+            </ul>
+            <div class="toggle-container fade-in">
+                <label class="switch">
+                    <input type="checkbox" id="mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+        <main class="content">
+            <header class="header fade-in">
+                <img src="https://cdn-ancco.nitrocdn.com/eoOqKFoEHjNDUhqcDBmZUwwbGWzBkhSc/assets/images/optimized/rev-3b0b8ad/www.visioninfosoft.com/wp-content/uploads/2016/02/Profile-300x300.jpg" alt="Profile Image" class="profile-img">
+            </header>
+            <section class="balance">
+                <h2 class="fade-in-down">Your Balance</h2>
+                <div class="balance-amount fade-in-up">$622,380.16</div>
+                <div class="balance-change fade-in-up">+2.8%</div>
+            </section>
+            <section class="charts">
+                <div class="chart-container">
+                    <h3 class="fade-in-right">Total Balance</h3>
+                    <div id="piechart_3d" class="fade-in-up" style="width: 900px; height: 500px;"></div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="fade-in-right">Total Cash In and Cash Out</h3>
+                    <div id="donutchart" class="fade-in-up" style="width: 900px; height: 500px;"></div>
+                </div>
+            </section>
+            <section class="transactions">
+                <h3 class="fade-in-left">Transactions</h3>
+                <div class="transaction fade-in-left">
+                    <span class="transaction-name">Spotify</span>
+                    <span class="transaction-amount">-$18.99</span>
+                    <span class="transaction-date">Wed 1:00pm</span>
+                </div>
+                <!-- Add more transactions as needed -->
+            </section>
+            <section class="goals">
+                <h3 class="fade-in-right">Financial Goals</h3>
+                <div class="goal">
+                    <span class="goal-name fade-in-right">Emergency Fund</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="goal">
+                    <span class="goal-name fade-in-right">Vacation Savings</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar-right fade-in">
+            <section class="card-info">
+                <h3 class="fade-in-down">My Cards</h3>
+                <div class="card fade-in">
+                    <h4 class="cred">CREDIT CARD</h4>
+                    <p class="card-holder"><b>NERD HERD</b></p>
+                    <p class="card-number"><b>1406 3214 3215 3216</b></p>
+                </div>
+            </section>
+            <section class="budgets">
+                <h3 class="fade-in-down">My Budgets</h3>
+                <div class="budget-item fade-in-up">Subscriptions: $25 left</div>
+                <div class="budget-item fade-in-up">Food and Drinks: $120 left</div>
+                <div class="budget-item fade-in-up">Groceries: $200 left</div>
+                <div class="budget-item fade-in-up">Savings: $50 left</div>
+            </section>
+            <section class="tips">
+                <h3 class="fade-in-down">Financial Tips</h3>
+                <p class="fade-in">1. Track your spending to identify patterns.</p>
+                <p class="fade-in">2. Set clear financial goals.</p>
+                <p class="fade-in">3. Review and adjust your budget regularly.</p>
+            </section>
+        </aside>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
